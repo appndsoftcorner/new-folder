@@ -1,0 +1,12 @@
+Git commands:
+
+get git clone url from github site(available n repository)
+git clone url
+git status
+git commit -m "any message"
+git push
+git add .  //Adds files in a folder
+git add -A //Adds all files in a folder
+git pull
+
+
