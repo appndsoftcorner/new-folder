@@ -49,15 +49,14 @@ BufferedWriter out = null;
  String aLine;
  while((aLine = in.readLine())!= null) 
  {
- if(aLine!="\r")
- {
+ aLine = aLine.trim();  
  out.write(aLine);
  out.newLine();
  //System.out.println(aLine);
  }
- }
  in.close();
  }
+ 
  catch (IOException e) 
  {
  e.printStackTrace();

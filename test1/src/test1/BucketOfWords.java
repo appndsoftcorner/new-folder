@@ -35,7 +35,7 @@ public class BucketOfWords
       {
   BufferedWriter bw=new BufferedWriter(new FileWriter(new File("C:/Users/phantom/Desktop/project/bucket of words/bucketOfWords.txt")));
   HashMap map = new HashMap();
-  int counter = 0;
+  //int counter = 0;
   for (int i = 0; i < spliter.length; i++) 
   {
    map.put(spliter[i].toLowerCase(), count[i]);
@@ -45,7 +45,7 @@ public class BucketOfWords
  // System.out.println("#######################");
   while (it.hasNext()) 
   {
-   counter++;
+  // counter++;
    String temp = (String) it.next();
    //System.out.println(temp);
    bw.write(temp);

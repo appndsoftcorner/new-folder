@@ -31,11 +31,11 @@ try
   fileWords = new Scanner(new File("C:/Users/phantom/Desktop/project/splitted dataset/final" + k + ".txt")).useDelimiter("\\Z").next();
   //System.out.println(fileWords);
   temp=new String[fileWords.length()];
-  temp=fileWords.split("\n");
+  temp=fileWords.split("\\n");
   stopWords = new Scanner(new File("C:/Users/phantom/Desktop/project/stop words/stopwords english.txt")).useDelimiter("\\Z").next();
   //System.out.println(stopWords);
   temp1=new String[stopWords.length()];
-  temp1=stopWords.split("\n");                 
+  temp1=stopWords.split("\\n");                 
   for(int i=0;i<temp.length;i++)
    {
   for(String j:temp1)
@@ -53,7 +53,9 @@ try
  {
  if(temp2!="abc")
  {
+ temp2=temp2.trim();
  bw.write(temp2);
+ bw.newLine();
  //System.out.println(temp2);
  }
  }                 
