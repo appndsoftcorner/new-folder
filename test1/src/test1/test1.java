@@ -13,27 +13,47 @@ public class test1
 public static void main(String[] args) throws IOException
 {
 PrintWriter pw;
-int i=0;
+String[] fileList;
 String[] token;
+File folder = new File("C:/Users/phantom/Desktop/project/input dataset");
+File[] listOfFiles = folder.listFiles();
+fileList=new String[listOfFiles.length];
+for (int k = 0; k < listOfFiles.length; k++) 
+ {
+  if (listOfFiles[k].isFile()) 
+  {
+   fileList[k]=(String)listOfFiles[k].getName();
+   //System.out.println("File " + listOfFiles[k].getName());
+  } 
+   }
 try 
 {
-String content = new Scanner(new File("C:/Users/phantom/Desktop/project/cv000_29590.txt")).useDelimiter("\\Z").next();
+ for(int k=0;k<fileList.length;k++)
+ {
+String content = new Scanner(new File("C:/Users/phantom/Desktop/project/input dataset/" + fileList[k])).useDelimiter("\\Z").next();
 StringTokenizer st = new StringTokenizer(content, " \t\n\r\f,.:;?![]<>()-/\"");
-pw=new PrintWriter("final.txt");
+pw=new PrintWriter("C:/Users/phantom/Desktop/project/splitted dataset/final" + k + ".txt");
 
 token=new String[content.length()];
+for(int i=0;i<st.countTokens();i++)
+{
 while(st.hasMoreTokens())
 {
 token[i]=(String)st.nextToken();
 i++;
 }
-for(int j=0;j<i;j++)
+}
+for(int j=0;j<content.length();j++)
 {
-System.out.println(token[j]);
+if(token[j]!=null)
+{
+//System.out.println(token[j]);
 pw.println(token[j]);
+}
 }
 if(pw!=null)
 pw.close();
+}
 }
 catch(IOException ioe)
 {
@@ -41,10 +61,5 @@ catch(IOException ioe)
 }
 catch(Exception e)
 {}
-finally{
-       }
-
-
-
 }}
 
