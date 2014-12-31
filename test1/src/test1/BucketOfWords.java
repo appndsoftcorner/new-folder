@@ -35,30 +35,38 @@ public class BucketOfWords
       {
   BufferedWriter bw=new BufferedWriter(new FileWriter(new File("C:/Users/phantom/Desktop/project/bucket of words/bucketOfWords.txt")));
   HashMap map = new HashMap();
-  //int counter = 0;
+  int counter = 0;
   for (int i = 0; i < spliter.length; i++) 
   {
    map.put(spliter[i].toLowerCase(), count[i]);
   }
    Iterator it = map.keySet().iterator();
-  //System.out.println("Words             Count");
- // System.out.println("#######################");
+  System.out.println("Words             Count");
+  bw.write("Words             Count");
+  bw.newLine();
+  System.out.println("#######################");
+  bw.write("#######################");
+  bw.newLine();
   while (it.hasNext()) 
   {
-  // counter++;
+   counter++;
    String temp = (String) it.next();
-   //System.out.println(temp);
+   System.out.print(temp);
    bw.write(temp);
-   bw.newLine();
-/*
+   //bw.newLine();
+
     // prints the spaces
    for (int i = 0; i < (20 - temp.length()); i++) {
     System.out.print(" ");
+    bw.write(" ");
    }
 
     // print the value -total count
+  Object ob=map.get(temp.toString());
    System.out.println(map.get(temp.toString()));
-        */
+   bw.write(ob.toString());
+   bw.newLine();
+        
   
   }
    bw.close();
