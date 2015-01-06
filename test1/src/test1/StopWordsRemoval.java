@@ -13,7 +13,7 @@ String fileList[];
 String[] temp;
 String[] temp1;
 BufferedWriter bw;
-File folder = new File("C:/Users/phantom/Desktop/project/splitted dataset");
+File folder = new File("C:/Users/phantom/Desktop/project/splitted dataset1");
 File[] listOfFiles = folder.listFiles();
 fileList=new String[listOfFiles.length];
 for (int k = 0; k < listOfFiles.length; k++) 
@@ -28,7 +28,7 @@ try
  {
  for(int k=0;k<fileList.length;k++)
  {
-  fileWords = new Scanner(new File("C:/Users/phantom/Desktop/project/splitted dataset/final" + k + ".txt")).useDelimiter("\\Z").next();
+  fileWords = new Scanner(new File("C:/Users/phantom/Desktop/project/splitted dataset1/final" + k + ".txt")).useDelimiter("\\Z").next();
   //System.out.println(fileWords);
   temp=new String[fileWords.length()];
   temp=fileWords.split("\\n");
@@ -48,7 +48,7 @@ try
               
    }
    }                
- bw=new BufferedWriter(new FileWriter("C:/Users/phantom/Desktop/project/stopwords removed dataset/stopwordsremovedf " + k + ".txt"));
+ bw=new BufferedWriter(new FileWriter("C:/Users/phantom/Desktop/project/stopwords removed dataset1/stopwordsremovedf " + k + ".txt"));
  for (String temp2 : temp) 
  {
  if(temp2!="abc")

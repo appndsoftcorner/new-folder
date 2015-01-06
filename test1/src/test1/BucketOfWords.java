@@ -8,6 +8,8 @@ public class BucketOfWords
  private String[] spliter;
  private int[] count;
  
+ 
+ 
  public void countWord(String Text) 
  {
  String temp1 = Text.replaceAll("[\\n]", " ");
@@ -42,43 +44,42 @@ public class BucketOfWords
   }
    Iterator it = map.keySet().iterator();
   System.out.println("Words             Count");
-  bw.write("Words             Count");
-  bw.newLine();
+  //bw.write("Words             Count");
+  //bw.newLine();
   System.out.println("#######################");
-  bw.write("#######################");
-  bw.newLine();
+  //bw.write("#######################");
+  //bw.newLine();
   while (it.hasNext()) 
   {
    counter++;
    String temp = (String) it.next();
-   System.out.print(temp);
+   System.out.println(temp);
    bw.write(temp);
+   bw.write(",");
    //bw.newLine();
 
-    // prints the spaces
+ /*   // prints the spaces
    for (int i = 0; i < (20 - temp.length()); i++) {
     System.out.print(" ");
     bw.write(" ");
    }
+   */
 
     // print the value -total count
   Object ob=map.get(temp.toString());
-   System.out.println(map.get(temp.toString()));
-   bw.write(ob.toString());
-   bw.newLine();
-        
+  System.out.println(map.get(temp.toString()));
+  bw.write(ob.toString());
+  bw.newLine();
+      
   
   }
    bw.close();
       }
   catch(Exception e)
-          {
-          
-          }
+          { }
    }
    
-
-  public static void main(String[] arg) 
+public static void main(String[] arg) 
   {
   String pattern ="";
   String str = null;
