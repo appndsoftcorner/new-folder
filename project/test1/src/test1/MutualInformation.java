@@ -54,7 +54,7 @@ bw=new BufferedWriter(new FileWriter(new File("C:/Users/phantom/Desktop/project/
 
 for(int k=0;k<content.length();k++)
 {
-    double miP=0.0,miN=0.0;
+    float miP=0,miN=0;
     float mi1,mi2;
     if(arr1[k][0]!=null && arr2[k][0]!=null)
     {
@@ -66,16 +66,16 @@ for(int k=0;k<content.length();k++)
         mi1=(a*m)/((a+b)*Nk);
         Nk=N2;
         mi2=(b*m)/((a+b)*Nk);
-        miP=Math.log10(mi1);
-        miN=Math.log10(mi2);
+        miP=(float)Math.log10(mi1);
+        miN=(float)Math.log10(mi2);
         
    System.out.println(arr1[k][0] + "," + mi1 + "," + mi2 + "," + miP + "," + miN + "====>" + Math.max(miP,miN));
     bw.write(arr1[k][0].trim());
     bw.write(",");
-    bw.write(miP+"");
-    bw.write(",");
-    bw.write(miN+"");
-    bw.write(",");
+    //bw.write(miP+"");
+    //bw.write(",");
+    //bw.write(miN+"");
+    //bw.write(",");
     bw.write(Math.max(miP,miN) + "");
     bw.newLine();
     }

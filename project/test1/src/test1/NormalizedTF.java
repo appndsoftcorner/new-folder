@@ -49,12 +49,12 @@ public class NormalizedTF
             System.out.println(fileList[k] + ":" + maxValue);
        for(int j=0;j<i;j++)
          {
-         double a=(0.5 + ((0.5*Integer.parseInt(token[j][1]))/maxValue));
+         float a=(float)(0.5 + ((0.5*Integer.parseInt(token[j][1]))/maxValue));
          //System.out.println(token[j][0]+ ":"+token[j][1] + ":" + a + "////normalizedTF" + k);
          bw.write(token[j][0].trim());
          bw.write(",");
-         bw.write(token[j][1].trim());
-         bw.write(",");
+         //bw.write(token[j][1].trim());
+         //bw.write(",");
          bw.write(a + "");
          bw.newLine();
          }
