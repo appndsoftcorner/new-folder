@@ -7,6 +7,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import static java.lang.Float.NaN;
 import java.util.Scanner;
 
 public class TF_OddsRatio
@@ -63,10 +64,15 @@ for(int j=0;j<fileList.length;j++)
                 {
                    float temp=Float.parseFloat(arr1[m][1])*Float.parseFloat(token[n][1]);
                    System.out.println(temp);
+                   if(Float.isNaN(temp) || Float.isInfinite(temp))
+                   {
+                    temp=0.0f;
+                   }
                    bw.write(arr1[m][0]);
                    bw.write(",");
                    bw.write(temp + "");
                    bw.newLine();
+                   
                 }
     }
     
