@@ -7,7 +7,12 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
+import java.util.TreeMap;
 
 public class SVMFormatConv3
 {
@@ -61,6 +66,7 @@ while((s=br.readLine())!=null)
 
 for(int j=0;j<fileList.length;j++)
 {
+    Map<Integer, String> unsortMap = new HashMap<Integer, String>();
     l=0;
     br1=new BufferedReader(new FileReader(new File("C:/Users/phantom/Desktop/project/calculations/variants/NTF1_MutualInformation/" + fileList[j])));
     String content1 = new Scanner(new File("C:/Users/phantom/Desktop/project/calculations/variants/NTF1_MutualInformation/" + fileList[j])).useDelimiter("\\Z").next();
@@ -80,19 +86,35 @@ for(int j=0;j<fileList.length;j++)
             //System.out.println(token[m][0] + "::::" + arr1[n][0]);
             
         if(arr1[n][0].equals(arr2[m][0]))
-                {                   
-                   bw.write(" ");
-                   bw.write(bowNum[n]);
-                   bw.write(":");
-                   bw.write(arr2[m][1]);
+                { 
+                   unsortMap.put(Integer.parseInt(bowNum[n]), arr2[m][1]);
                 }
     }
         }
+   Map<Integer, String> treeMap = new TreeMap<Integer, String>(
+			new Comparator<Integer>() {
+ 
+			@Override
+			public int compare(Integer o1, Integer o2) {
+				return o1.compareTo(o2);
+			}
+ 
+		});
+		treeMap.putAll(unsortMap);
+   for (Map.Entry<Integer, String> entry : treeMap.entrySet()) 
+   {
+       bw.write(" ");
+       bw.write(entry.getKey().toString());
+       bw.write(":");
+       bw.write(entry.getValue());
+   }
    bw.newLine();
    bw.close();
 }
-for(int j=0;j<fileList.length;j++)
+
+for(int j=0;j<fileList1.length;j++)
 {
+    Map<Integer, String> unsortMap = new HashMap<Integer, String>();
     l=0;
     br1=new BufferedReader(new FileReader(new File("C:/Users/phantom/Desktop/project/calculations/variants/NTF2_MutalInformation/" + fileList1[j])));
     String content1 = new Scanner(new File("C:/Users/phantom/Desktop/project/calculations/variants/NTF2_MutalInformation/" + fileList1[j])).useDelimiter("\\Z").next();
@@ -112,18 +134,30 @@ for(int j=0;j<fileList.length;j++)
             //System.out.println(token[m][0] + "::::" + arr1[n][0]);
             
         if(arr1[n][0].equals(arr2[m][0]))
-                {                   
-                   bw.write(" ");
-                   bw.write(bowNum[n]);
-                   bw.write(":");
-                   bw.write(arr2[m][1]);
+                { 
+                   unsortMap.put(Integer.parseInt(bowNum[n]), arr2[m][1]);
                 }
     }
         }
+   Map<Integer, String> treeMap = new TreeMap<Integer, String>(
+			new Comparator<Integer>() {
+ 
+			@Override
+			public int compare(Integer o1, Integer o2) {
+				return o1.compareTo(o2);
+			}
+ 
+		});
+		treeMap.putAll(unsortMap);
+   for (Map.Entry<Integer, String> entry : treeMap.entrySet()) 
+   {
+       bw.write(" ");
+       bw.write(entry.getKey().toString());
+       bw.write(":");
+       bw.write(entry.getValue());
+   }
    bw.newLine();
    bw.close();
 }
     }
-    
-    
-}
+ }
