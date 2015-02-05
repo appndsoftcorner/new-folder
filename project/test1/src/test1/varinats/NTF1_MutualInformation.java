@@ -11,15 +11,15 @@ import java.util.Scanner;
 
 public class NTF1_MutualInformation
 {
-    public static void main(String[] args) throws FileNotFoundException, IOException
+    public static void ntf_MutualInformation() throws FileNotFoundException, IOException
     {
-BufferedReader br,br1;
-BufferedWriter bw;
-String[] fileList;
-String[][] token;
-String arr1[][];
-String s1,s2;
-int i=0,l=0;
+        BufferedReader br,br1;
+        BufferedWriter bw;
+        String[] fileList;
+        String[][] token;
+        String arr1[][];
+        String s1,s2;
+        int i=0,l=0;
 File folder = new File("C:/Users/phantom/Desktop/project/calculations/Normalized TF2");
 File[] listOfFiles = folder.listFiles();
 fileList=new String[listOfFiles.length];
@@ -77,7 +77,11 @@ for(int j=0;j<fileList.length;j++)
        }
     bw.close();
 }
-} 
+    }
+    public static void main(String[] args) throws FileNotFoundException, IOException
+    {
+        ntf_MutualInformation();
+    } 
 }
 
 

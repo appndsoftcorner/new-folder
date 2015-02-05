@@ -7,7 +7,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
@@ -16,16 +15,16 @@ import java.util.TreeMap;
 
 public class SVMFormatConv2
 {
-    public static void main(String[] args) throws FileNotFoundException, IOException
+    public static void svmFormatConv2() throws FileNotFoundException, IOException
     {
-String[] fileList,fileList1;
-BufferedReader br,br1;
-BufferedWriter bw;
-String[][] arr1,arr2;
-String s,s2;
-String[] bowNum;
-File f;
-int i,l;
+        String[] fileList,fileList1;
+        BufferedReader br,br1;
+        BufferedWriter bw;
+        String[][] arr1,arr2;
+        String s,s2;
+        String[] bowNum;
+        File f;
+        int i,l;
 File folder = new File("C:/Users/phantom/Desktop/project/input dataset/pos/");
 File folder1 = new File("C:/Users/phantom/Desktop/project/input dataset/neg/");
 
@@ -159,5 +158,9 @@ for(int j=0;j<fileList1.length;j++)
    bw.newLine();
    bw.close();
 }
+    }
+    public static void main(String[] args) throws FileNotFoundException, IOException
+    {
+        svmFormatConv2();
     }
  }

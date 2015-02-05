@@ -12,17 +12,16 @@ import java.util.Scanner;
 public class MutualInformation 
 {
     public static BufferedWriter bw;
-
-    public static void main(String[] args) throws FileNotFoundException, IOException,NumberFormatException
+    
+    public static void mutualInformation() throws FileNotFoundException, IOException
     {
-        
-BufferedReader br,br1;
-int i=0,j=0;
-int N1=0,N2=0,Nk=0;
-String s1,s2;
-String[][] arr1;
-String[][] arr2;
-BufferedWriter bw;
+        BufferedReader br,br1;
+        int i=0,j=0;
+        int N1=0,N2=0,Nk=0;
+        String s1,s2;
+        String[][] arr1;
+        String[][] arr2;
+        BufferedWriter bw;
 
 N1=new File("C:/Users/phantom/Desktop/project/input dataset/pos").listFiles().length;
 N2=new File("C:/Users/phantom/Desktop/project/input dataset/neg").listFiles().length;
@@ -82,5 +81,11 @@ for(int k=0;k<content.length();k++)
    }
 
 bw.close();
+    }
+
+    public static void main(String[] args) throws FileNotFoundException, IOException,NumberFormatException
+    {
+      mutualInformation();
+
     }
 }

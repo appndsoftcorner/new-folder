@@ -7,9 +7,7 @@ public class BucketOfWords
 {
  private String[] spliter;
  private int[] count;
- 
- 
- 
+  
  public void countWord(String Text) 
  {
  String temp1 = Text.replaceAll("[\\n]", " ");
@@ -78,10 +76,10 @@ public class BucketOfWords
   catch(Exception e)
           { }
    }
-   
-public static void main(String[] arg) 
+  
+  public static void bucketOfWords()
   {
-  String pattern ="";
+      String pattern ="";
   String str = null;
    try 
    {
@@ -102,5 +100,11 @@ public static void main(String[] arg)
   BucketOfWords bof = new BucketOfWords();
   bof.countWord(pattern);
  }
+  
+   
+public static void main(String[] arg) 
+  {
+      bucketOfWords();
 
+}
 }

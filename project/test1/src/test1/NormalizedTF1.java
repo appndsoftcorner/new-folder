@@ -7,7 +7,8 @@ import java.util.Scanner;
 public class NormalizedTF1
 {
     static int maxValue;
-    public static void main(String[] args) throws FileNotFoundException, IOException
+    
+    public static void normalizedTF1() throws FileNotFoundException, IOException
     {
         BufferedReader br;
         BufferedWriter bw;
@@ -60,6 +61,10 @@ public class NormalizedTF1
          }
          bw.close();
         }
-                          
-        }
+         
+    }
+    public static void main(String[] args) throws FileNotFoundException, IOException
+    {
+          normalizedTF1();
+    }
 }
