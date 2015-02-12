@@ -50,14 +50,14 @@ public class NormalizedTF1
             System.out.println(fileList[k] + ":" + maxValue);
        for(int j=0;j<i;j++)
          {
-         float a=(float)(0.5 + ((0.5*Integer.parseInt(token[j][1]))/maxValue));
-         //System.out.println(token[j][0]+ ":"+token[j][1] + ":" + a + "////normalizedTF1" + k);
-         bw.write(token[j][0].trim());
-         bw.write(",");
-         //bw.write(token[j][1].trim());
-         //bw.write(",");
-         bw.write(a + "");
-         bw.newLine();
+            float a=(float)(0.5 + ((0.5*Integer.parseInt(token[j][1]))/maxValue));
+            //System.out.println(token[j][0]+ ":"+token[j][1] + ":" + a + "////normalizedTF1" + k);
+            bw.write(token[j][0].trim());
+            bw.write(",");
+            //bw.write(token[j][1].trim());
+            //bw.write(",");
+            bw.write(a + "");
+            bw.newLine();
          }
          bw.close();
         }

@@ -16,6 +16,8 @@ public class test1
         PrintWriter pw;
         String[] fileList;
         String[] token;
+        
+        //Selects list of files in a folder
         File folder = new File("C:/Users/phantom/Desktop/project/input dataset/pos/");
         File[] listOfFiles = folder.listFiles();
         fileList=new String[listOfFiles.length];
@@ -27,6 +29,8 @@ public class test1
                         //System.out.println("File " + listOfFiles[k].getName());
                     } 
             }
+        
+        //Reads content from each file and converts in to tokens
         try 
         {
             for(int k=0;k<fileList.length;k++)
@@ -44,6 +48,8 @@ public class test1
                                     i++;
                                 }
                         }
+        
+        //Writes content into a new file
         for(int j=0;j<content.length();j++)
          {
             if(token[j]!=null)

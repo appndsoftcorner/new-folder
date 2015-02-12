@@ -1,4 +1,4 @@
-package test1.varinats;
+package test1.variants;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -9,9 +9,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class TF1_OddsRatio
+public class Normal1_TF_IDF
 {
-    public static void tf1_OddsRatio() throws FileNotFoundException, IOException
+    public static void normal1_TF_IDF() throws FileNotFoundException, IOException
     {
         BufferedReader br,br1;
         BufferedWriter bw;
@@ -31,8 +31,8 @@ for (int k = 0; k < listOfFiles.length; k++)
    //System.out.println("File " + listOfFiles[k].getName());
   } 
    }
-br=new BufferedReader(new FileReader(new File("C:/Users/phantom/Desktop/project/calculations/Odds Ratio.txt")));
-String content = new Scanner(new File("C:/Users/phantom/Desktop/project/calculations/Odds Ratio.txt")).useDelimiter("\\Z").next();
+br=new BufferedReader(new FileReader(new File("C:/Users/phantom/Desktop/project/calculations/Normal IDF.txt")));
+String content = new Scanner(new File("C:/Users/phantom/Desktop/project/calculations/Normal IDF.txt")).useDelimiter("\\Z").next();
 token=new String[content.length()][2];
 while((s1=br.readLine())!=null)
 {
@@ -52,7 +52,7 @@ for(int j=0;j<fileList.length;j++)
         arr1[l]=s2.split(",");
         l++;
     }
-       bw=new BufferedWriter(new FileWriter(new File("C:/Users/phantom/Desktop/project/calculations/variants/TF2_OddsRatio/" + fileList[j])));
+       bw=new BufferedWriter(new FileWriter(new File("C:/Users/phantom/Desktop/project/calculations/variants/Normal2 TF_IDF/" + fileList[j])));
    for(int m=0;m<l;m++)
     {
       
@@ -71,6 +71,7 @@ for(int j=0;j<fileList.length;j++)
                    bw.write(",");
                    bw.write(temp + "");
                    bw.newLine();
+                   
                 }
     }
     
@@ -80,7 +81,7 @@ for(int j=0;j<fileList.length;j++)
     }
     public static void main(String[] args) throws FileNotFoundException, IOException
     {
-        tf1_OddsRatio();
+        normal1_TF_IDF();
     } 
 }
 

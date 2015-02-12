@@ -1,4 +1,4 @@
-package test1.varinats;
+package test1.variants;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -9,9 +9,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class NTF1_MutualInformation
+public class NTF1_OddsRatio
 {
-    public static void ntf_MutualInformation() throws FileNotFoundException, IOException
+    public static void ntf1_OddsRatio() throws FileNotFoundException, IOException
     {
         BufferedReader br,br1;
         BufferedWriter bw;
@@ -31,8 +31,8 @@ for (int k = 0; k < listOfFiles.length; k++)
    //System.out.println("File " + listOfFiles[k].getName());
   } 
    }
-br=new BufferedReader(new FileReader(new File("C:/Users/phantom/Desktop/project/calculations/Mutual Information.txt")));
-String content = new Scanner(new File("C:/Users/phantom/Desktop/project/calculations/Mutual Information.txt")).useDelimiter("\\Z").next();
+br=new BufferedReader(new FileReader(new File("C:/Users/phantom/Desktop/project/calculations/Odds Ratio.txt")));
+String content = new Scanner(new File("C:/Users/phantom/Desktop/project/calculations/Odds Ratio.txt")).useDelimiter("\\Z").next();
 token=new String[content.length()][2];
 while((s1=br.readLine())!=null)
 {
@@ -52,7 +52,7 @@ for(int j=0;j<fileList.length;j++)
         arr1[l]=s2.split(",");
         l++;
     }
-       bw=new BufferedWriter(new FileWriter(new File("C:/Users/phantom/Desktop/project/calculations/variants/NTF2_MutalInformation/" + fileList[j])));
+       bw=new BufferedWriter(new FileWriter(new File("C:/Users/phantom/Desktop/project/calculations/variants/NTF2_OddsRatio/" + fileList[j])));
    for(int m=0;m<l;m++)
     {
       
@@ -80,7 +80,7 @@ for(int j=0;j<fileList.length;j++)
     }
     public static void main(String[] args) throws FileNotFoundException, IOException
     {
-        ntf_MutualInformation();
+      ntf1_OddsRatio();
     } 
 }
 

@@ -1,4 +1,4 @@
-package test1.varinats;
+package test1.variants;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -9,9 +9,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class NTF_OddsRatio
+public class TF_MutualInformation
 {
-    public static void ntf_OddsRatio() throws FileNotFoundException, IOException
+    public static void tf_MutualInformation() throws FileNotFoundException, IOException
     {
         BufferedReader br,br1;
         BufferedWriter bw;
@@ -20,7 +20,7 @@ public class NTF_OddsRatio
         String arr1[][];
         String s1,s2;
         int i=0,l=0;
-File folder = new File("C:/Users/phantom/Desktop/project/calculations/Normalized TF1");
+File folder = new File("C:/Users/phantom/Desktop/project/unique stopwords removed dataset1");
 File[] listOfFiles = folder.listFiles();
 fileList=new String[listOfFiles.length];
 for (int k = 0; k < listOfFiles.length; k++) 
@@ -31,8 +31,8 @@ for (int k = 0; k < listOfFiles.length; k++)
    //System.out.println("File " + listOfFiles[k].getName());
   } 
    }
-br=new BufferedReader(new FileReader(new File("C:/Users/phantom/Desktop/project/calculations/Odds Ratio.txt")));
-String content = new Scanner(new File("C:/Users/phantom/Desktop/project/calculations/Odds Ratio.txt")).useDelimiter("\\Z").next();
+br=new BufferedReader(new FileReader(new File("C:/Users/phantom/Desktop/project/calculations/Mutual Information.txt")));
+String content = new Scanner(new File("C:/Users/phantom/Desktop/project/calculations/Mutual Information.txt")).useDelimiter("\\Z").next();
 token=new String[content.length()][2];
 while((s1=br.readLine())!=null)
 {
@@ -44,15 +44,15 @@ while((s1=br.readLine())!=null)
 for(int j=0;j<fileList.length;j++)
 {
     l=0;
-    br1=new BufferedReader(new FileReader(new File("C:/Users/phantom/Desktop/project/calculations/Normalized TF1/" + fileList[j])));
-    String content1 = new Scanner(new File("C:/Users/phantom/Desktop/project/calculations/Normalized TF1/" + fileList[j])).useDelimiter("\\Z").next();
+    br1=new BufferedReader(new FileReader(new File("C:/Users/phantom/Desktop/project/unique stopwords removed dataset1/" + fileList[j])));
+    String content1 = new Scanner(new File("C:/Users/phantom/Desktop/project/unique stopwords removed dataset1/" + fileList[j])).useDelimiter("\\Z").next();
     arr1=new String[content1.length()][2];
     while((s2=br1.readLine())!=null)
     {
         arr1[l]=s2.split(",");
         l++;
     }
-       bw=new BufferedWriter(new FileWriter(new File("C:/Users/phantom/Desktop/project/calculations/variants/NTF1_OddsRatio/" + fileList[j])));
+       bw=new BufferedWriter(new FileWriter(new File("C:/Users/phantom/Desktop/project/calculations/variants/TF1_MutualInformation/" + fileList[j])));
    for(int m=0;m<l;m++)
     {
       
@@ -61,7 +61,8 @@ for(int j=0;j<fileList.length;j++)
             //System.out.println(token[m][0] + "::::" + arr1[n][0]);
         if(token[n][0].equals(arr1[m][0]))
                 {
-                   float temp=Float.parseFloat(arr1[m][1])*Float.parseFloat(token[n][1]);
+                   float logTF=(float)(1+Math.log10(Float.parseFloat(arr1[m][1])));
+                   float temp=logTF*Float.parseFloat(token[n][1]);
                    System.out.println(temp);
                    if(Float.isNaN(temp) || Float.isInfinite(temp))
                    {
@@ -80,7 +81,7 @@ for(int j=0;j<fileList.length;j++)
     }
     public static void main(String[] args) throws FileNotFoundException, IOException
     {
-        ntf_OddsRatio();
+        tf_MutualInformation();
     } 
 }
 

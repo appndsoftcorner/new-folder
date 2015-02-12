@@ -1,4 +1,4 @@
-package test1.varinats;
+package test1.variants;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -9,9 +9,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class NTF1_OddsRatio
+public class NTF_OddsRatio
 {
-    public static void ntf1_OddsRatio() throws FileNotFoundException, IOException
+    public static void ntf_OddsRatio() throws FileNotFoundException, IOException
     {
         BufferedReader br,br1;
         BufferedWriter bw;
@@ -20,7 +20,7 @@ public class NTF1_OddsRatio
         String arr1[][];
         String s1,s2;
         int i=0,l=0;
-File folder = new File("C:/Users/phantom/Desktop/project/calculations/Normalized TF2");
+File folder = new File("C:/Users/phantom/Desktop/project/calculations/Normalized TF1");
 File[] listOfFiles = folder.listFiles();
 fileList=new String[listOfFiles.length];
 for (int k = 0; k < listOfFiles.length; k++) 
@@ -44,15 +44,15 @@ while((s1=br.readLine())!=null)
 for(int j=0;j<fileList.length;j++)
 {
     l=0;
-    br1=new BufferedReader(new FileReader(new File("C:/Users/phantom/Desktop/project/calculations/Normalized TF2/" + fileList[j])));
-    String content1 = new Scanner(new File("C:/Users/phantom/Desktop/project/calculations/Normalized TF2/" + fileList[j])).useDelimiter("\\Z").next();
+    br1=new BufferedReader(new FileReader(new File("C:/Users/phantom/Desktop/project/calculations/Normalized TF1/" + fileList[j])));
+    String content1 = new Scanner(new File("C:/Users/phantom/Desktop/project/calculations/Normalized TF1/" + fileList[j])).useDelimiter("\\Z").next();
     arr1=new String[content1.length()][2];
     while((s2=br1.readLine())!=null)
     {
         arr1[l]=s2.split(",");
         l++;
     }
-       bw=new BufferedWriter(new FileWriter(new File("C:/Users/phantom/Desktop/project/calculations/variants/NTF2_OddsRatio/" + fileList[j])));
+       bw=new BufferedWriter(new FileWriter(new File("C:/Users/phantom/Desktop/project/calculations/variants/NTF1_OddsRatio/" + fileList[j])));
    for(int m=0;m<l;m++)
     {
       
@@ -80,7 +80,7 @@ for(int j=0;j<fileList.length;j++)
     }
     public static void main(String[] args) throws FileNotFoundException, IOException
     {
-      ntf1_OddsRatio();
+        ntf_OddsRatio();
     } 
 }
 
