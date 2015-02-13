@@ -6,14 +6,14 @@ lumumba,0.0
 refused,0.0
 pander,0.0
 belgians,0.0
-who,0.1947889
+who,0.12671311
 continued,0.0
 condescending,0.0
 paternalistic,0.0
 relationship,0.14468278
 congo,0.0
 officers,0.0
-particularly,0.58956206
+particularly,0.38351896
 general,0.9006154
 janssens,0.0
 rudi,0.0
@@ -26,7 +26,7 @@ caused,0.6289321
 rebellions,0.0
 undermining,0.0
 lumumba,0.0
-who,0.1947889
+who,0.12671311
 outraged,0.0
 rape,0.3098039
 murder,0.05622292
@@ -87,7 +87,7 @@ players,0.0
 frequently,0.6289321
 succumb,0.0
 cliche,0.0
-particularly,0.58956206
+particularly,0.38351896
 regarding,0.3098039
 lumumba's,0.0
 private,0.0
@@ -97,7 +97,7 @@ script,0.12589219
 illuminates,0.0
 bantu,0.0
 sayings,0.0
-like,0.048512876
+like,0.031558353
 'the,0.0
 hand,0.19567733
 gives,0.0
@@ -112,11 +112,11 @@ assured,0.1850461
 scenes,0.043766573
 unfortunately,0.5351132
 playing,0.08562899
-like,0.048512876
+like,0.031558353
 standard,0.51410484
 television,0.0
 fare,0.6289321
-he's,1.5101719
+he's,0.9823895
 served,0.0
 well,1.2342641
 casting,0.1654332
@@ -135,7 +135,7 @@ lumumba's,0.0
 intelligence,0.23340937
 ability,0.0
 strategize,0.0
-he's,1.5101719
+he's,0.9823895
 cornered,0.0
 insurmountable,0.0
 odds,0.3098039

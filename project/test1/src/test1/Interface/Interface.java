@@ -9,7 +9,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JFrame;
 
 /**
  *
@@ -1290,6 +1289,7 @@ public class Interface extends javax.swing.JFrame {
         try {
             // TODO add your handling code here:
             test1.Normal_IDF.normal_TF_IDF();
+            
         } catch (IOException ex) {
             Logger.getLogger(Interface.class.getName()).log(Level.SEVERE, null, ex);
         }
